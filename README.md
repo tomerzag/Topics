@@ -1,6 +1,4 @@
 # Topics
-Get Related Topics
-
 In order to run the application you need to run the Test.Api Project.
 
 
