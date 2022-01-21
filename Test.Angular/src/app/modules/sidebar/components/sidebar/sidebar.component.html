@@ -1,0 +1,9 @@
+<h4>{{ title }}</h4>
+
+<ul *ngFor="let value of values.slice().reverse()">
+    <li>
+        <a (click)="clickValue(value)">
+            {{ value }}
+        </a>
+    </li>
+</ul>

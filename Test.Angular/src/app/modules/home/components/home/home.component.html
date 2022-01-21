@@ -1,0 +1,20 @@
+<div class="home-container">
+    <div class="sidebar">
+        <app-sidebar title="Search History" [values]="searchHistory"></app-sidebar>
+    </div>
+
+    <div class="related-topics">
+        <app-search-input [value]="query" (search)="searchRelatedTopics($event)"></app-search-input>
+
+        <div *ngIf="relatedTopics">
+            <div class="list">
+                <app-topic-list [relatedTopics]="relatedTopics | top:pageNumber:pageSize" [markText]="query">
+                </app-topic-list>
+            </div>
+
+            <app-pagination [pageNumber]="pageNumber" [pageSize]="pageSize" [length]="(relatedTopics || []).length"
+                (selectPage)="onSelectPage($event)">
+            </app-pagination>
+        </div>
+    </div>
+</div>

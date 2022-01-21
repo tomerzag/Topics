@@ -1,0 +1,17 @@
+/* unvisited link */
+a:link {
+    color: red;
+}
+
+a:visited {
+    color: green;
+}
+
+a:hover {
+    color: hotpink;
+}
+
+a {
+    color: blue;
+    cursor: pointer;
+}

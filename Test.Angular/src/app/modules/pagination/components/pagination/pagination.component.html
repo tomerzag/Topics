@@ -1,0 +1,12 @@
+<div class="pages">
+    <div>
+        <button *ngFor="let page of pages" (click)="pageSelected(page)"
+            [style.fontWeight]="page === pageNumber ? 'bold' : ''">
+            {{ page }}
+        </button>
+    </div>
+
+    <h4>
+        {{ length }} Results
+    </h4>
+</div>

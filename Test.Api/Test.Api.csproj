@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Test.Clients\Test.Clients.csproj" />
+    <ProjectReference Include="..\Test.Models\Test.Models.csproj" />
+    <ProjectReference Include="..\Test.Services\Test.Services.csproj" />
+  </ItemGroup>
+
+</Project>
