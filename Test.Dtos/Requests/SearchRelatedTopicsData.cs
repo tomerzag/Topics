@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Test.Api.Data
+namespace Test.Dtos.Requests
 {
     public class SearchRelatedTopicsData
     {

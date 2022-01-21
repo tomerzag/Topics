@@ -1,9 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Test.Api.Data;
+using Test.Dtos.Requests;
 using Test.Models.Dtos;
 using Test.Models.Entities;
 using Test.Models.Interfaces;
@@ -15,10 +16,13 @@ namespace Test.Api.Controllers
     public class TopicsController : ControllerBase
     {
         private readonly ITopicsService _topicsService;
+        private readonly IMapper _mapper;
 
-        public TopicsController(ITopicsService topicsService)
+        public TopicsController(ITopicsService topicsService,
+            IMapper mapper)
         {
             this._topicsService = topicsService;
+            this._mapper = mapper;
         }
 
         [HttpGet("search")]
@@ -26,21 +30,12 @@ namespace Test.Api.Controllers
         {
             try
             {
-                var relatedTopic = await _topicsService.SearchRelatedTopics(data.Query);
+                var relatedTopics = (await _topicsService.SearchRelatedTopics(data.Query))
+                    .SelectMany(rt => !string.IsNullOrEmpty(rt.FirstURL) ?
+                        new List<RelatedTopic>() { rt }
+                        : rt.Topics);
 
-                var dto = relatedTopic.SelectMany(rt =>
-                {
-                    if (!string.IsNullOrEmpty(rt.FirstURL))
-                        return new List<RelatedTopic>() { rt };
-                    else
-                        return rt.Topics;
-                })
-                    .Select(t => new RelatedTopicDto
-                    {
-                        URL = t.FirstURL,
-                        Title = t.FirstURL.Split("/")[^1]
-                    });
-
+                var dto = _mapper.Map<List<RelatedTopicDto>>(relatedTopics);
                 return Ok(dto);
             }
             catch (Exception ex)

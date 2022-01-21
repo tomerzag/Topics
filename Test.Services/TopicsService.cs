@@ -34,7 +34,7 @@ namespace Test.Services
             }
             catch (Exception ex)
             {
-                _logger.LogError(exception: ex, message: "Get Topics");
+                _logger.LogError(exception: ex, message: "Search Related Topics");
                 throw;
             }
         }

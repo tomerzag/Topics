@@ -5,11 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="11.0.0" />
+    <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="11.0.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Test.Clients\Test.Clients.csproj" />
+    <ProjectReference Include="..\Test.Dtos\Test.Dtos.csproj" />
     <ProjectReference Include="..\Test.Models\Test.Models.csproj" />
     <ProjectReference Include="..\Test.Services\Test.Services.csproj" />
   </ItemGroup>

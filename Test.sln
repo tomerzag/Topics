@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31829.152
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Api", "Test.Api\Test.Api.csproj", "{8022F324-6769-4A39-8C6A-DEF7FFB36532}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.Api", "Test.Api\Test.Api.csproj", "{8022F324-6769-4A39-8C6A-DEF7FFB36532}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Services", "Test.Services\Test.Services.csproj", "{BA8E1779-4DF7-4BBA-8902-0BBF401178B9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.Services", "Test.Services\Test.Services.csproj", "{BA8E1779-4DF7-4BBA-8902-0BBF401178B9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Models", "Test.Models\Test.Models.csproj", "{18A19C0D-17ED-4446-940A-1F218C1E7B8B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.Models", "Test.Models\Test.Models.csproj", "{18A19C0D-17ED-4446-940A-1F218C1E7B8B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Clients", "Test.Clients\Test.Clients.csproj", "{DA760908-067E-47B7-8B22-3425B56C2F40}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Test.Clients", "Test.Clients\Test.Clients.csproj", "{DA760908-067E-47B7-8B22-3425B56C2F40}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.Dtos", "Test.Dtos\Test.Dtos.csproj", "{D4BE6AAC-CBAF-4727-B868-98797CDC3260}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{DA760908-067E-47B7-8B22-3425B56C2F40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA760908-067E-47B7-8B22-3425B56C2F40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA760908-067E-47B7-8B22-3425B56C2F40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4BE6AAC-CBAF-4727-B868-98797CDC3260}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4BE6AAC-CBAF-4727-B868-98797CDC3260}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4BE6AAC-CBAF-4727-B868-98797CDC3260}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4BE6AAC-CBAF-4727-B868-98797CDC3260}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
