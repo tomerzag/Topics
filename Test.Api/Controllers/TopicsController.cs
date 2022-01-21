@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Test.Api.Data;
 using Test.Models.Dtos;
 using Test.Models.Entities;
 using Test.Models.Interfaces;
@@ -21,11 +22,11 @@ namespace Test.Api.Controllers
         }
 
         [HttpGet("search")]
-        public async Task<IActionResult> Get([FromQuery] string query)
+        public async Task<IActionResult> Search([FromQuery] SearchRelatedTopicsData data)
         {
             try
             {
-                var relatedTopic = await _topicsService.GetRelatedTopics(query);
+                var relatedTopic = await _topicsService.SearchRelatedTopics(data.Query);
 
                 var dto = relatedTopic.SelectMany(rt =>
                 {

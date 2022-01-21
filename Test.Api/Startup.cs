@@ -40,7 +40,7 @@ namespace Test.Api
 
             services.AddHttpClient("DuckDuckGo", httpClient =>
             {
-                httpClient.BaseAddress = new Uri("http://api.duckduckgo.com/");
+                httpClient.BaseAddress = new Uri(Configuration["DuckDuckGo:Url"]);
             });
 
             services.AddCors();
@@ -54,19 +54,20 @@ namespace Test.Api
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Test.Api v1"));
-            }
 
-            app.UseCors(
-                options => options.WithOrigins("http://localhost:4200")
-                    .AllowAnyHeader()
-                    .AllowCredentials()
-                    .AllowAnyMethod());
+                app.UseCors(
+                    options => options.WithOrigins("http://localhost:4200")
+                        .AllowAnyHeader()
+                        .AllowCredentials()
+                        .AllowAnyMethod());
+            }
 
             app.UseHttpsRedirection();
 
             app.UseRouting();
 
             app.UseAuthorization();
+            app.UseFileServer();
 
             app.UseEndpoints(endpoints =>
             {

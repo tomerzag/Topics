@@ -6,6 +6,6 @@ namespace Test.Models.Interfaces
 {
     public interface ITopicsClient
     {
-        Task<Topic> GetTopic(string query, string format);
+        Task<Topic> SearchTopic(string query, string format);
     }
 }

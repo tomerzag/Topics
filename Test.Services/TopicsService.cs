@@ -22,11 +22,11 @@ namespace Test.Services
             this._logger = logger;
         }
 
-        public async Task<List<RelatedTopic>> GetRelatedTopics(string query)
+        public async Task<List<RelatedTopic>> SearchRelatedTopics(string query)
         {
             try
             {
-                var topic = await _topicsClient.GetTopic(query, FORMAT);
+                var topic = await _topicsClient.SearchTopic(query, FORMAT);
                 if (topic == null)
                     throw new ArgumentException($"Something is wrong with the query: {query}");
 

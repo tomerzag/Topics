@@ -18,7 +18,7 @@ namespace Test.Clients
             this._httpClientFactory = httpClientFactory;
         }
 
-        public async Task<Topic> GetTopic(string query, string format)
+        public async Task<Topic> SearchTopic(string query, string format)
         {
             var httpClient = _httpClientFactory.CreateClient(CLIENT_NAME);
             var httpResponseMessage = await httpClient.GetAsync(
