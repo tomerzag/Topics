@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using DuckDuckGo.Clients;
-using DuckDuckGo.Extensions;
 using DuckDuckGo.Models;
 using System.Collections.Generic;
 using System.Linq;

@@ -3,10 +3,10 @@ using System.Net.Http;
 
 namespace DuckDuckGo.Clients
 {
-   public class DuckDuckGoClient : IDisposable
+   public partial class DuckDuckGoClient : IDisposable
     {
         private const string CLIENT_NAME = "DuckDuckGo";
-        public HttpClient HttpClient { get; private set; }
+        public HttpClient HttpClient { get; set; }
 
         private bool _disposedValue;
 
