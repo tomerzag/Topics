@@ -4,8 +4,8 @@ using Test.Models.Entities;
 
 namespace Test.Models.Interfaces
 {
-    public interface ITopicsClient
+    public interface ITopicsProvider
     {
-        Task<Topic> SearchTopic(string query, string format);
+        Task<List<Topic>> SearchRelatedTopicAsync(string query);
     }
 }

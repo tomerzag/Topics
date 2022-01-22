@@ -10,27 +10,21 @@ namespace Test.Services
 {
     public class TopicsService : ITopicsService
     {
-        private const string FORMAT = "json";
-
-        private readonly ITopicsClient _topicsClient;
+        private readonly ITopicsProvider _topicsClient;
         private readonly ILogger<TopicsService> _logger;
 
-        public TopicsService(ITopicsClient topicsClient,
+        public TopicsService(ITopicsProvider topicsClient,
             ILogger<TopicsService> logger)
         {
             this._topicsClient = topicsClient;
             this._logger = logger;
         }
 
-        public async Task<List<RelatedTopic>> SearchRelatedTopics(string query)
+        public async Task<List<Topic>> SearchRelatedTopicsAsync(string query)
         {
             try
             {
-                var topic = await _topicsClient.SearchTopic(query, FORMAT);
-                if (topic == null)
-                    throw new ArgumentException($"Something is wrong with the query: {query}");
-
-                return topic.RelatedTopics;
+                return await _topicsClient.SearchRelatedTopicAsync(query);
             }
             catch (Exception ex)
             {

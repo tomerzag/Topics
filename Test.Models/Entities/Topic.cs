@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-
-namespace Test.Models.Entities
+﻿namespace Test.Models.Entities
 {
     public class Topic
     {
-        public List<RelatedTopic> RelatedTopics { get; set; }
+        public string Title { get; set; }
+
+        public string URL { get; set; }
     }
 }

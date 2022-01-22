@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Test.Models.Entities
+namespace DuckDuckGo.Models
 {
     public class RelatedTopic
     {

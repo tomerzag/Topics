@@ -6,6 +6,6 @@ namespace Test.Models.Interfaces
 {
     public interface ITopicsService
     {
-        Task<List<RelatedTopic>> SearchRelatedTopics(string query);
+        Task<List<Topic>> SearchRelatedTopicsAsync(string query);
     }
 }

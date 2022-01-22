@@ -1,6 +1,6 @@
 ﻿namespace Test.Models.Dtos
 {
-    public class RelatedTopicDto
+    public class TopicDto
     {
         public string Title { get; set; }
 

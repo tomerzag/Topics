@@ -1,12 +1,7 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Test.Dtos.Requests;
-using Test.Models.Dtos;
-using Test.Models.Entities;
 using Test.Models.Interfaces;
 
 namespace Test.Api.Controllers
@@ -16,13 +11,10 @@ namespace Test.Api.Controllers
     public class TopicsController : ControllerBase
     {
         private readonly ITopicsService _topicsService;
-        private readonly IMapper _mapper;
 
-        public TopicsController(ITopicsService topicsService,
-            IMapper mapper)
+        public TopicsController(ITopicsService topicsService)
         {
             this._topicsService = topicsService;
-            this._mapper = mapper;
         }
 
         [HttpGet("search")]
@@ -30,13 +22,7 @@ namespace Test.Api.Controllers
         {
             try
             {
-                var relatedTopics = (await _topicsService.SearchRelatedTopics(data.Query))
-                    .SelectMany(rt => !string.IsNullOrEmpty(rt.FirstURL) ?
-                        new List<RelatedTopic>() { rt }
-                        : rt.Topics);
-
-                var dto = _mapper.Map<List<RelatedTopicDto>>(relatedTopics);
-                return Ok(dto);
+                return Ok(await _topicsService.SearchRelatedTopicsAsync(data.Query));
             }
             catch (Exception ex)
             {

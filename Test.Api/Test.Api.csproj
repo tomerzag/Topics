@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Test.Clients\Test.Clients.csproj" />
+    <ProjectReference Include="..\DuckDuckGo\DuckDuckGo.csproj" />
     <ProjectReference Include="..\Test.Dtos\Test.Dtos.csproj" />
     <ProjectReference Include="..\Test.Models\Test.Models.csproj" />
     <ProjectReference Include="..\Test.Services\Test.Services.csproj" />
